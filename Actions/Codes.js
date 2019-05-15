@@ -1,1 +1,2 @@
-export const CODE = 'CODE';
+export const CHANGE_PROMO_ACTION = 'CHANGE_PROMO_ACTION';
+export const SET_ITEM_DATA = 'SET_ITEM_DATA';

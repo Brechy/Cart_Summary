@@ -2,6 +2,7 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import Tooltip from './Tooltip.js';
 
 class PickupSavingsTotal extends Component {
@@ -21,9 +22,8 @@ class PickupSavingsTotal extends Component {
           text="Picking up your order in the store helps cut costs, and we pass
                 the savings on to you!"
           style={styles.tooltip}
-        >
-          Pickup Savings
-        </Tooltip>
+        />
+        <Text>Pickup Savings {this.props.item.pricing.savings}</Text>
       </View>
     );
   }
@@ -34,9 +34,15 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'plum'
   },
   tooltip: {}
 });
 
-export default PickupSavingsTotal;
+const mapStateToProps = state => {
+  console.log('state', state);
+  return { item: state.item };
+};
+
+export default connect(mapStateToProps)(PickupSavingsTotal);

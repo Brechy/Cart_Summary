@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { CODE } from '../Actions/Codes.js';
+import { CHANGE_PROMO_ACTION } from '../Actions/Codes.js';
 
 const initialState = {
   open: false,
@@ -7,11 +7,11 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  switch (action.codes) {
-    case CODE:
+  switch (action.type) {
+    case CHANGE_PROMO_ACTION:
       return {
         ...state,
-        value: action.payload
+        promocode: action.payload
       };
     default:
       return state;
