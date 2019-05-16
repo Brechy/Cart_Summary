@@ -33,4 +33,4 @@ This should open the Metro Bunlder locally in your browser.
 
 ## Connect to the Expo Server
 
--Open the Expo Client app in your phone and use the QR scanner to scan the QR code in the Metro Bundler that is now open in your browser.
+Open the Expo Client app in your phone and use the QR scanner to scan the QR code in the Metro Bundler that is now open in your browser.
