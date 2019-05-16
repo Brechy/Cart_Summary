@@ -1,12 +1,6 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  TouchableHighlight,
-  Text,
-  Image,
-  View
-} from 'react-native';
+import { TouchableHighlight, View } from 'react-native';
 
 class Expander extends Component {
   state = {

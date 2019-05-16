@@ -9,13 +9,7 @@ class EstTotal extends Component {
   render() {
     calculatedTotal = this.props.item.pricing.total;
     if (this.props.promoCode.promoCode) {
-      console.log(
-        'Applying discount for promoCode',
-        this.props.promoCode.promoCode
-      );
       calculatedTotal = calculatedTotal * 0.9;
-    } else {
-      console.log('No promo code', this.props.promoCode.promoCode);
     }
     return (
       <View style={styles.container}>

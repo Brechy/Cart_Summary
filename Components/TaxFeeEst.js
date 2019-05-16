@@ -15,7 +15,6 @@ class TaxFeeEst extends Component {
           </Text>
         </View>
         <Text style={styles.estimate}>${this.props.item.pricing.tax}</Text>
-        {/* <View style={styles.line} /> */}
       </View>
     );
   }

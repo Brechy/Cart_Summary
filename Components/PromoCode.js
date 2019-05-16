@@ -6,10 +6,6 @@ import { connect } from 'react-redux';
 import { setPromoCode } from '../Actions/PromoAction.js';
 
 class PromoCode extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   state = {
     promoCode: ''
   };
@@ -44,6 +40,7 @@ class PromoCode extends Component {
         <Button
           onPress={() => {
             setPromoCode(this.state.promoCode)(this.props.dispatch);
+            this.setState({ promoCode: '' });
             alert('promo code applied');
           }}
           title="Apply"

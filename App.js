@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 import React from 'react';
-import { ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Provider } from 'react-redux';
 import { setItemData } from './Actions/SetItemData.js';
 import store from './store.js';

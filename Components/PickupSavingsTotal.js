@@ -10,8 +10,6 @@ import {
   Button
 } from 'react-native';
 import { connect } from 'react-redux';
-// import Tooltip from './Tooltip.js';
-import { setTooltipVisible } from '../Actions/SetTooltipVisible';
 
 class PickupSavingsTotal extends Component {
   constructor(props) {
@@ -23,14 +21,6 @@ class PickupSavingsTotal extends Component {
   }
 
   render() {
-    //   close={() => {
-    //     setTooltipVisible(false)(this.props.dispatch);
-    //   }}
-    //   image={require('../assets/pusheen-money.png')}
-    //   text="
-    // />
-    //);
-    //}
     const setTooltipVisible = expanded => {
       this.setState({ ...this.state, tooltipVisible: expanded });
     };
@@ -51,8 +41,6 @@ class PickupSavingsTotal extends Component {
           <Modal
             visible={this.state.tooltipVisible}
             onRequestClose={() => {
-              // this callback is required on android but we don't need it.
-              // returning undefined.
               return undefined;
             }}
           >
