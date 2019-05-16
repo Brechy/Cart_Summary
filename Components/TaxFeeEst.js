@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     minWidth: 300,
     flexDirection: 'row',
     backgroundColor: 'transparent',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
-    borderWidth: 2,
+    margin: 10,
     zIndex: 0
   },
   estimate: {

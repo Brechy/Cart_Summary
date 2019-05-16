@@ -70,10 +70,10 @@ class PickupSavingsTotal extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'plum'
+    backgroundColor: 'plum',
+    borderWidth: 2
   },
   tooltip: {}
 });

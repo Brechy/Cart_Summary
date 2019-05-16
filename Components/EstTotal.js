@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 import React, { Component } from 'react';
@@ -12,7 +13,7 @@ class EstTotal extends Component {
     }
     return (
       <View style={styles.container}>
-        <Text>Est. Total {calculatedTotal}</Text>
+        <Text style={styles.estTotal}>Est. Total ${calculatedTotal}</Text>
       </View>
     );
   }
@@ -20,11 +21,15 @@ class EstTotal extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
-    backgroundColor: 'powderblue',
+    backgroundColor: 'transparent',
     alignItems: 'stretch',
     justifyContent: 'center'
+  },
+  estTotal: {
+    fontWeight: '800',
+    fontSize: 40
   }
 });
 

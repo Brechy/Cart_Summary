@@ -29,8 +29,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 5,
+    borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 30
   }
 });
 
