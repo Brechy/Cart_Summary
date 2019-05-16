@@ -1,9 +1,9 @@
 /* eslint-disable indent */
-import { CHANGE_PROMO_ACTION } from './Codes.js';
+import { CHANGE_PROMO_CODE } from './Codes.js';
 
-export const handleChange = e => dispatch => {
+export const setPromoCode = value => dispatch => {
   dispatch({
-    type: CHANGE_PROMO_ACTION,
-    payload: e.target.value
+    type: CHANGE_PROMO_CODE,
+    payload: value
   });
 };

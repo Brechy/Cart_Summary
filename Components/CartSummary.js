@@ -7,16 +7,19 @@ import EstTotal from './EstTotal.js';
 import Subtotal from './Subtotal.js';
 import TaxFeeEst from './TaxFeeEst.js';
 import PickupSavingsTotal from './PickupSavingsTotal.js';
+import ItemDetails from './ItemDetails.js';
+import PromoCode from './PromoCode.js';
 
 class CartSummary extends Component {
   render() {
-    console.log('Sup SUCKAFISH');
     return (
       <View style={styles.container}>
         <Subtotal />
         <PickupSavingsTotal />
         <TaxFeeEst />
         <EstTotal />
+        <ItemDetails />
+        <PromoCode />
       </View>
     );
   }
@@ -25,7 +28,7 @@ class CartSummary extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    borderWidth: 5,
     alignItems: 'center',
     justifyContent: 'center'
   }

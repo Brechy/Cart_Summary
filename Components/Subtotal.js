@@ -8,11 +8,10 @@ import { StyleSheet, Text, View } from 'react-native';
 //connect with all props passed in from mock api calls
 class Subtotal extends Component {
   render() {
-    console.log('WFEOIJ');
-    console.log(this.props);
     return (
       <View style={styles.container}>
-        <Text>Subtotal {this.props.item.pricing.subtotal}</Text>
+        <Text>Subtotal</Text>
+        <Text>{this.props.item.pricing.subtotal}</Text>
       </View>
     );
   }

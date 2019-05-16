@@ -10,7 +10,8 @@ const itemData = {
   details: {
     item_name:
       'Essentials by OFM ESS-3085 Racing Style Leather Gaming Chair, Red',
-    quantity: 1
+    quantity: 1,
+    image_uri: 'https://avatars1.githubusercontent.com/u/24580640?v=4'
   }
 };
 

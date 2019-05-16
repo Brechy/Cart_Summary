@@ -2,20 +2,22 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 
-//all info is currently hardcoded, will come back and
-//connect with all props passed in from mock api calls
 class EstTotal extends Component {
   render() {
+    calculatedTotal = this.props.item.pricing.total;
+    if (this.props.promoCode.promoCode) {
+      calculatedTotal = calculatedTotal * 0.9;
+    }
     return (
       <View style={styles.container}>
-        <Text>Est. Total $100</Text>
+        <Text>Est. Total {calculatedTotal}</Text>
       </View>
     );
   }
 }
 
-//will come back and add all children to main parent containers
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -26,4 +28,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default EstTotal;
+const mapStateToProps = state => {
+  return { item: state.item, promoCode: state.promoCode };
+};
+
+export default connect(mapStateToProps)(EstTotal);

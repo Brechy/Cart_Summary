@@ -11,7 +11,9 @@ const initialState = {
   },
   details: {
     item_name: 'Loading...',
-    quantity: -1
+    quantity: -1,
+    image_uri:
+      'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
   }
 };
 

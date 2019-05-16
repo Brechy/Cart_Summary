@@ -1,16 +1,19 @@
 /* eslint-disable indent */
-import { CHANGE_PROMO_CODE } from '../Actions/Codes.js';
+import { SET_TOOLTIP_VISIBLE } from '../Actions/Codes.js';
 
 const initialState = {
-  promoCode: ''
+  visible: false
 };
 
 export default function(state = initialState, action) {
+  console.log(action);
+  console.log('POOP');
+  console.log(state);
   switch (action.type) {
-    case CHANGE_PROMO_CODE:
+    case SET_TOOLTIP_VISIBLE:
       return {
         ...state,
-        promoCode: action.payload
+        visible: action.payload
       };
     default:
       return state;

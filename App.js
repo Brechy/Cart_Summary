@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 import React from 'react';
+import { ScrollView } from 'react-native';
 import { Provider } from 'react-redux';
 import { setItemData } from './Actions/SetItemData.js';
 import store from './store.js';
@@ -15,7 +16,12 @@ class Root extends React.Component {
     });
   }
   render() {
-    return <CartSummary />;
+    // return <CartSummary />;
+    return (
+      <ScrollView>
+        <CartSummary />
+      </ScrollView>
+    );
   }
 }
 
