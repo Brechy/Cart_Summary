@@ -16,15 +16,21 @@ class PromoCode extends Component {
 
   render() {
     const expanded = (
-      <View style={styles.container}>
-        <Text>Apply promo code</Text>
-        <Image source={require('../assets/icons8-plus-40.png')} />
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.title}>Apply promo code</Text>
+        <Image
+          style={styles.button}
+          source={require('../assets/icons8-plus-40.png')}
+        />
       </View>
     );
     const collapsed = (
-      <View>
-        <Text>Hide promo code</Text>
-        <Image source={require('../assets/icons8-minus-40.png')} />
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.title}>Hide promo code</Text>
+        <Image
+          style={styles.button}
+          source={require('../assets/icons8-minus-40.png')}
+        />
       </View>
     );
     const contents = (
@@ -37,7 +43,7 @@ class PromoCode extends Component {
         />
         <Button
           onPress={() => {
-            setPromoCode(this.state.promoCode);
+            setPromoCode(this.state.promoCode)(this.props.dispatch);
             alert('promo code applied');
           }}
           title="Apply"
@@ -58,7 +64,12 @@ class PromoCode extends Component {
 }
 
 const styles = StyleSheet.create({
-  title: {},
+  title: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: 20,
+    margin: 10
+  },
   body: {
     width: '75%'
   },
@@ -67,9 +78,9 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'transparent'
   },
-  buttonImage: {
-    height: 66,
-    width: 66
+  button: {
+    marginLeft: 10,
+    alignItems: 'flex-end'
   }
 });
 

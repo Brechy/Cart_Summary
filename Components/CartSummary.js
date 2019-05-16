@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  ScrollView,
+  Text
+} from 'react-native';
 import { connect } from 'react-redux';
 import EstTotal from './EstTotal.js';
 import Subtotal from './Subtotal.js';
@@ -9,30 +14,53 @@ import TaxFeeEst from './TaxFeeEst.js';
 import PickupSavingsTotal from './PickupSavingsTotal.js';
 import ItemDetails from './ItemDetails.js';
 import PromoCode from './PromoCode.js';
+import PaddingLine from './PaddingLine.js';
 
 class CartSummary extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Subtotal />
-        <PickupSavingsTotal />
-        <TaxFeeEst />
-        <EstTotal />
-        <ItemDetails />
-        <PromoCode />
-      </View>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <ScrollView>
+          <Text style={styles.header}>Cart Summary</Text>
+          <PaddingLine padding={5} color="black" height={2} />
+          <Subtotal />
+          <PickupSavingsTotal />
+          <TaxFeeEst />
+          <EstTotal />
+          <PaddingLine padding={5} color="black" height={2} />
+          <ItemDetails />
+          <PaddingLine padding={5} color="black" height={2} />
+          <PromoCode />
+        </ScrollView>
+      </KeyboardAvoidingView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  header: {
+    paddingTop: 30,
+    textAlign: 'center',
+    fontWeight: '400',
+    fontSize: 40,
+    color: 'black',
+    margin: 20
+  },
   container: {
+    position: 'absolute',
+    top: 10,
+    bottom: 10,
+    left: 10,
+    right: 10,
     flex: 1,
-    borderWidth: 5,
-    borderRadius: 10,
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'stretch',
     justifyContent: 'center',
-    marginTop: 30
+    // marginLeft: 10,
+    // marginRight: 10,
+    // marginBottom: 10,
+    // marginTop: 30,
+    padding: 20
   }
 });
 

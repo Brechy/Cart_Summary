@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable indent */
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View } from 'react-native';
@@ -20,23 +21,29 @@ class ItemDetails extends Component {
   }
 
   render() {
-    expand = (
-      <View style={styles.container}>
-        <Text>See item details</Text>
-        <Image source={require('../assets/icons8-plus-40.png')} />
-      </View>
-    );
-    collapse = (
-      <View>
-        <Text>Hide item details</Text>
-        <Image source={require('../assets/icons8-minus-40.png')} />
-      </View>
-    );
-    contents = (
-      <View>
-        <View style={styles.title}>{this.props.title}</View>
+    const expand = (
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.title}>See item details</Text>
         <Image
-          style={styles.buttonImage}
+          style={styles.button}
+          source={require('../assets/icons8-plus-40.png')}
+        />
+      </View>
+    );
+    const collapse = (
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.title}>Hide item details</Text>
+        <Image
+          style={styles.button}
+          source={require('../assets/icons8-minus-40.png')}
+        />
+      </View>
+    );
+    const contents = (
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+        <View style={{ backgroundColor: 'orange' }}>{this.props.title}</View>
+        <Image
+          style={styles.itemImage}
           source={{
             uri: this.props.item.details.image_uri
           }}
@@ -56,17 +63,24 @@ class ItemDetails extends Component {
 }
 
 const styles = StyleSheet.create({
-  title: {},
-  body: {
-    width: '75%'
-  },
   container: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: 'brown',
-    flexDirection: 'row'
+    flex: 1
   },
-  buttonImage: {
+  title: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: 20,
+    margin: 10
+  },
+  body: {
+    flex: 1,
+    textAlign: 'left'
+  },
+  button: {
+    marginLeft: 10,
+    alignItems: 'flex-end'
+  },
+  itemImage: {
     height: 66,
     width: 66
   }

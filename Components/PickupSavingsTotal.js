@@ -39,47 +39,82 @@ class PickupSavingsTotal extends Component {
     };
 
     return (
-      <View style={styles.container}>
-        <TouchableHighlight onPress={toggleTooltipVisible}>
-          <View>
-            <Modal
-              visible={this.state.tooltipVisible}
-              onRequestClose={() => {
-                // this callback is required on android but we don't need it.
-                // returning undefined.
-                return undefined;
-              }}
-            >
-              <View>
-                <Text>
-                  Picking up your order in the store helps cut costs, and we
-                  pass the savings on to you!
-                </Text>
-                <Button onPress={toggleTooltipVisible} title="Close" />
-              </View>
-            </Modal>
-            <Text>Pickup Savings</Text>
-            <Text>{this.props.item.pricing.savings}</Text>
-          </View>
-        </TouchableHighlight>
-      </View>
+      <TouchableHighlight
+        style={{
+          flex: 1,
+          flexDirection: 'column',
+          alignItems: 'stretch'
+        }}
+        onPress={toggleTooltipVisible}
+      >
+        <View style={styles.container}>
+          <Modal
+            visible={this.state.tooltipVisible}
+            onRequestClose={() => {
+              // this callback is required on android but we don't need it.
+              // returning undefined.
+              return undefined;
+            }}
+          >
+            <View style={styles.tooltipContainer}>
+              <Text style={styles.tooltipText}>
+                Picking up your order in the store helps cut costs, and we pass
+                the savings on to you!
+              </Text>
+              <Button
+                style={styles.tooltipButton}
+                onPress={toggleTooltipVisible}
+                title="Close"
+              />
+            </View>
+          </Modal>
+          <Text style={styles.toggleText}>Pickup Savings</Text>
+          <Text style={styles.estimate}>
+            ${this.props.item.pricing.savings}
+          </Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'plum',
-    borderWidth: 2
+    alignItems: 'stretch',
+    zIndex: 0,
+    flexDirection: 'row',
+    marginBottom: 10
   },
-  tooltip: {}
+  estimate: {
+    flex: 1,
+    fontWeight: '600',
+    fontSize: 20,
+    textAlign: 'right',
+    color: '#ff0000'
+  },
+  toggleText: {
+    flex: 1,
+    fontWeight: '400',
+    fontSize: 20,
+    textDecorationLine: 'underline'
+  },
+  tooltipText: {
+    flex: 1,
+    fontWeight: '400',
+    fontSize: 20,
+    color: 'black',
+    margin: 20
+  },
+  tooltipButton: {
+    flex: 1
+  },
+  tooltipContainer: {
+    flex: 1,
+    flexDirection: 'column'
+  }
 });
 
 const mapStateToProps = state => {
-  console.log('state', state);
   return { item: state.item, tooltip: state.tooltip };
 };
 

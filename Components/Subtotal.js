@@ -10,8 +10,10 @@ class Subtotal extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Subtotal</Text>
-        <Text>{this.props.item.pricing.subtotal}</Text>
+        <View style={styles.estimateLabel}>
+          <Text style={styles.text}>Subtotal</Text>
+        </View>
+        <Text style={styles.estimate}>${this.props.item.pricing.subtotal}</Text>
       </View>
     );
   }
@@ -21,14 +23,26 @@ class Subtotal extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgreen',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'row',
+    zIndex: 0,
+    marginBottom: 10
+  },
+  estimate: {
+    flex: 1,
+    fontWeight: '600',
+    textAlign: 'right',
+    fontSize: 20
+  },
+  estimateLabel: {
+    flex: 1
+  },
+  text: {
+    fontWeight: '400',
+    fontSize: 20
   }
 });
 
 const mapStateToProps = state => {
-  console.log('state', state);
   return { item: state.item };
 };
 

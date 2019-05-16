@@ -15,6 +15,7 @@ class TaxFeeEst extends Component {
           </Text>
         </View>
         <Text style={styles.estimate}>${this.props.item.pricing.tax}</Text>
+        {/* <View style={styles.line} /> */}
       </View>
     );
   }
@@ -23,22 +24,29 @@ class TaxFeeEst extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minWidth: 300,
     flexDirection: 'row',
-    backgroundColor: 'transparent',
     alignItems: 'stretch',
     justifyContent: 'center',
-    margin: 10,
-    zIndex: 0
+    marginBottom: 10
   },
   estimate: {
-    marginLeft: 60,
     fontWeight: '600',
-    fontSize: 20
+    fontSize: 20,
+    flex: 1,
+    textAlign: 'right'
   },
   text: {
+    flex: 1,
     fontWeight: '400',
     fontSize: 20
+  },
+  line: {
+    flex: 1,
+    flexDirection: 'row',
+    height: 2,
+    width: '80%',
+    backgroundColor: 'black',
+    margin: 10
   }
 });
 

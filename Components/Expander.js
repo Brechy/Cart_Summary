@@ -9,22 +9,10 @@ import {
 } from 'react-native';
 
 class Expander extends Component {
-  //   constructor(props) {
-  //     super(props);
-
-  //     this.state = {
-  //       expanded: false
-  //     };
-  //     console.log('FIJOEWOIWEFOIJJWOEIJFOJIEWFOIJEFWIOJFEWIOJFEIOJFEWOIJEW');
-  //     console.log(this.setExpanded);
-  //   }
   state = {
     expanded: false
   };
-  //   poop() {}
-  //   setExpanded(v) {
-  //     this.setState({ ...this.state, expanded: v });
-  //   }
+
   render() {
     const collapse = () => {
       this.setState({ expanded: false });

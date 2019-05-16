@@ -9,11 +9,18 @@ class EstTotal extends Component {
   render() {
     calculatedTotal = this.props.item.pricing.total;
     if (this.props.promoCode.promoCode) {
+      console.log(
+        'Applying discount for promoCode',
+        this.props.promoCode.promoCode
+      );
       calculatedTotal = calculatedTotal * 0.9;
+    } else {
+      console.log('No promo code', this.props.promoCode.promoCode);
     }
     return (
       <View style={styles.container}>
-        <Text style={styles.estTotal}>Est. Total ${calculatedTotal}</Text>
+        <Text style={styles.estTotalLabel}>Est. Total</Text>
+        <Text style={styles.estTotal}>${calculatedTotal.toFixed(2)}</Text>
       </View>
     );
   }
@@ -25,11 +32,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'transparent',
     alignItems: 'stretch',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 10
+  },
+  estTotalLabel: {
+    flex: 1,
+    fontWeight: '800',
+    alignItems: 'flex-start',
+    fontSize: 30
   },
   estTotal: {
+    flex: 1,
+    textAlign: 'right',
+    alignItems: 'flex-end',
     fontWeight: '800',
-    fontSize: 40
+    fontSize: 30
   }
 });
 

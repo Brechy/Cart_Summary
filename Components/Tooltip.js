@@ -22,8 +22,6 @@
 //   }
 
 //   render() {
-//     console.log('Sup foo');
-
 //     return (
 //       <View style={styles.container}>
 //         <View style={{ marginTop: 10 }}>

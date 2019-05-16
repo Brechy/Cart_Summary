@@ -6,6 +6,10 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
+  console.log('XXXXXXXXXXXXXXXXXXXXXXXXX');
+  console.log(state);
+  console.log(action);
+  console.log('OIJWFOIJWEFOIJEWF');
   switch (action.type) {
     case CHANGE_PROMO_CODE:
       return {

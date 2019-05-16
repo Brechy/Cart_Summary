@@ -6,9 +6,6 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  console.log(action);
-  console.log('POOP');
-  console.log(state);
   switch (action.type) {
     case SET_TOOLTIP_VISIBLE:
       return {
